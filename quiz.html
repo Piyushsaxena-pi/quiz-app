@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Quiz App</title>
+    <link rel="stylesheet" href="quiz.css" />
+  </head>
+  <body>
+    <div class="quiz-container">
+      <!-- 1. Start/Welcome Screen -->
+      <!-- Hint for JS: Remove the 'active' class to hide, or add it to show -->
+      <div class="quiz-box start-screen active">
+        <h1>Ready for the Challenge?</h1>
+        <p>Test your knowledge with our quick quiz.</p>
+        <button id="start-btn" class="btn primary-btn">Start Quiz</button>
+      </div>
+
+      <!-- 2. Active Quiz Screen -->
+      <div class="quiz-box question-screen">
+        <div class="quiz-header">
+          <div class="progress-container">
+            <span id="progress-text">Question 1 of 10</span>
+            <div class="progress-bar-bg">
+              <!-- Hint for JS: Dynamically change the width% of this bar -->
+              <div id="progress-bar-fill"></div>
+            </div>
+          </div>
+          <div class="timer-box">
+            <span id="timer-text"
+              >Time Left: <strong id="time-left">10</strong>min</span
+            >
+          </div>
+        </div>
+
+        <div class="quiz-body"></div>
+
+        <div class="quiz-footer">
+          <!-- Hint for JS: Use 'disabled' attribute until an option is picked -->
+          <button id="next-btn" class="btn primary-btn">Next Question</button>
+        </div>
+      </div>
+
+      <!-- 3. Results Screen -->
+      <div class="quiz-box results-screen">
+        <h2>Quiz Completed!</h2>
+        <div class="score-display">
+          <p>
+            You scored <strong id="final-score">0</strong> out of
+            <strong id="total-questions">10</strong>
+          </p>
+          <div class="percentage-circle">0%</div>
+        </div>
+        <button id="restart-btn" class="btn secondary-btn">Try Again</button>
+      </div>
+    </div>
+    <script src="quiz.js" type="module"></script>
+  </body>
+</html>
