@@ -11,10 +11,12 @@ const score = document.querySelector("#final-score");
 const calculatePercentage = document.querySelector(".percentage-circle");
 const display = document.querySelector("#time-left");
 const progressBar = document.querySelector("#progress-bar-fill");
+const questionNumber = document.querySelector("#question-number");
 
 let buttonClicked = 0;
 let totalScore = 0;
 let currentWidth = 0;
+let questionCount = 0;
 
 function quizGenerator(buttonClicked) {
   const currentQuiz = allQuiz[buttonClicked];
@@ -51,6 +53,9 @@ startQuiz.addEventListener("click", () => {
   toggleTimer();
   currentWidth = 10;
   progressBar.style.width = currentWidth + "%";
+  currentWidth += 10;
+  questionNumber.innerHTML = allQuiz[questionCount].id;
+  questionCount++;
 });
 
 nextButton.addEventListener("click", (event) => {
@@ -64,6 +69,10 @@ nextButton.addEventListener("click", (event) => {
     score.textContent = totalScore;
     calculatePercentage.textContent = `${(totalScore * 100) / 10}%`;
   }
+  if (questionCount < allQuiz.length) {
+    questionNumber.innerHTML = allQuiz[questionCount].id;
+    questionCount++;
+  }
 });
 
 restart.addEventListener("click", () => {
@@ -72,6 +81,9 @@ restart.addEventListener("click", () => {
     welcomeText.classList.add("active");
     buttonClicked = 0;
     resetTimer();
+    if (questionCount > 0) {
+      questionCount = 0;
+    }
   }
 });
 
