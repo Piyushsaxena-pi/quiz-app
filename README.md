@@ -45,7 +45,7 @@ No build tools, frameworks, or external dependencies are required — it runs di
 
 > Add a live demo link here once deployed (e.g. via GitHub Pages, Netlify, or Vercel):
 > ```md
-> 🔗 [Live Demo](your-deployed-link-here)
+> 🔗 [Live Demo](https://quiz-app-ten-topaz-44.vercel.app/quiz.html)
 > ```
 
 ---
